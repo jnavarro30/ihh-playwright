@@ -1,18 +1,16 @@
 {
   "name": "ihh-playwright",
   "version": "1.0.0",
-  "description": "",
-  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test",
-    "pw-report": "npx playwright show-report",
-    "pw-ui": "npx playwright test --ui"
+    "test": "npx playwright test"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "description": "",
   "devDependencies": {
-    "@playwright/test": "^1.53.0"
+    "@playwright/test": "^1.53.0",
+    "@types/node": "^24.0.0"
   }
 }
