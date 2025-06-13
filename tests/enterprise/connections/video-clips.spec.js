@@ -24,6 +24,6 @@ test.describe("Video Clips", () => {
   test("open first video clip", async ({ page }) => {
     await page.getByText('Video Clips').click();
     await page.locator('div').filter({ hasText: /^Jun 11, 2025 11:37 PMJesse Navarro$/ }).getByRole('img').click();
-    expect(page.getByText('Test video')).toBeAttached;
+    expect(page.getByText('Test video')).toBeVisible();
   });
 });

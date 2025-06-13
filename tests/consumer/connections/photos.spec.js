@@ -20,6 +20,6 @@ test.describe("Messages", () => {
   test("open first message", async ({ page }) => {
     await page.getByText('Messages').click();
     await page.getByText("Test message").click();
-    expect(page.getByText("Test message").first()).toBeAttached;
+    expect(page.getByText("Test message").first()).toBeVisible();
   });
 });

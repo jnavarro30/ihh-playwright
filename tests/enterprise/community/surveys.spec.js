@@ -18,13 +18,13 @@ test.describe("Surveys", () => {
   });
 
   test("find unstarted survey options", async ({ page }) => {
-    await page.getByText('Fruits and Vegetables', { exact: true }).click();
-    expect(page.locator('div').filter({ hasText: /^AYes$/ }).nth(1)).toBeVisible;
+    await page.getByText('Fruits and Vegetables').click();
+    await expect(page.locator('div').filter({ hasText: /^AYes$/ }).nth(1)).toBeVisible();
   });
 
   test("find completed survey message", async ({ page }) => {
-    await page.getByText('Movie Collection', { exact: true }).click();
-    expect(page.getByText('Thank you!')).toBeVisible;
-    expect(page.getByText('Progress: Survey Completed')).toBeVisible;
+    await page.getByText('Movie Collection').click();
+    await expect(page.getByText('Thank you!')).toBeVisible();
+    await expect(page.getByText('Progress: Survey Completed')).toBeVisible();
   });
 });

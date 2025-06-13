@@ -9,7 +9,7 @@ test.describe("sign in", () => {
 //     await page.goto(user.url());
 //     const signIn = page.locator("text=Sign In");
 
-//     await expect(signIn).toBeAttached();
+//     await expect(signIn).toBeVisible();
 //   });
 
   test("test", async ({ page }) => {
@@ -19,7 +19,7 @@ test.describe("sign in", () => {
     // await page.getByText("Continue").click();
     // await page.locator("#otpField").fill(otp);
     await page.waitForTimeout(3000);
-    expect(page.getByText("Good afternoon, Andrew R!")).toBeAttached;
+    expect(page.getByText("Good afternoon, Andrew R!")).toBeVisible();
   });
 
   //   test("redirect to sign in page", async ({page}) => {

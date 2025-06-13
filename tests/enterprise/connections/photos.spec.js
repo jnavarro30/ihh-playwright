@@ -29,6 +29,6 @@ test.describe("Photos", () => {
       .getByRole("img")
       .click();
     await page.getByText("Test photo").click();
-    expect(page.getByText("Test photo").first()).toBeAttached;
+    expect(page.getByText("Test photo").first()).toBeVisible();
   });
 });

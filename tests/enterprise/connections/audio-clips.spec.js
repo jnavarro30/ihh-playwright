@@ -24,6 +24,6 @@ test.describe("Audio Clips", () => {
   test("open first audio clip", async ({ page }) => {
     await page.getByText('Audio Clips').click();
     await page.getByText('Test audio').click();
-    expect(page.getByText('Test audio00:00:')).toBeAttached;
+    expect(page.getByText('Test audio00:00:')).toBeVisible();
   });
 });

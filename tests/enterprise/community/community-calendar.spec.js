@@ -7,25 +7,18 @@ test.describe("Community Calendar", () => {
   beforeEach(async ({ page }) => {
     await page.goto(user.signedInUrl());
     await page.getByText('Community').first().click();
-    await page.getByText('Community Calendar').click();
+    await page.getByText('Calendar').click();
   });
 
   test("redirect to community calendar", async ({ page }) => {
     let url =
-      "https://tv.independa.com/s/community/calendar-type";
+      "https://tv.independa.com/s/community/v3/calendar";
     await page.waitForURL(url);
     expect(page.url()).toBe(url);
   });
 
-  test("find open gym in Independent Living", async ({ page }) => {
-    await page.getByText('Independent Living').click();
-    await page.getByText('01Open GYM').click();
-    expect(page.getByRole('row', { name: 'Name Open GYM' }).locator('div').nth(2)).toBeAttached;
-  });
-
-  test("find assistance hour in Assisted Living", async ({ page }) => {
-    await page.getByText('Assisted Living').click();
-    await page.getByText('01Assistance Hour!').click();
-    expect(page.getByRole('row', { name: 'Name Assistance Hour!' }).locator('div').nth(2)).toBeAttached;
+  test("personal and community selectors", async ({ page }) => {
+    await expect(page.getByText('Personal')).toBeVisible();
+    await expect(page.getByText('Community')).toBeVisible();
   });
 });
